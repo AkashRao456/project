@@ -1,0 +1,39 @@
+{% extends "users/layout.html" %}
+
+{% block body %}
+    {% if message %}
+    <div>{{ message }}</div>
+    {% endif %}
+
+    <form action="register" method="post">
+        {% csrf_token %}
+        <header>
+            <h1>User Registration</h1>
+        </header>
+        <hr>
+        <table>
+            <tr>
+                <td><label>First name</label></td>
+                <td><input type="text" name="first_name"placeholder="K Akash"></td>
+            </tr>
+            <tr>
+                <td><label>Last name</label></td>
+                <td><input type="text" name="last_name" placeholder="Rao"></td>
+            </tr>
+            <tr>
+                <td><label for="">Email</label></td>
+                <td><input type="email"  name="email" placeholder="abc123@gmail.com"></td>
+            </tr>
+            <tr>
+                <td><label for="">Username</label></td>
+                <td><input type="text" name="username" placeholder="akash123"></td>
+            </tr>
+            <tr>
+                <td><label for="">password</label></td>
+                <td><input type="password" name="password"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Sign Up">
+    </form>
+
+{% endblock %}
