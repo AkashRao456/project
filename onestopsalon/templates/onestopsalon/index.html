@@ -1,0 +1,16 @@
+{% extends "OneStopSalon/layout.html" %}
+
+{% block body %}
+
+    <header>
+        <h1>One Stop Salon</h1>
+    </header>
+    <hr>
+    <nav>
+        <span><a href="">Admin Login</span></a>
+        <span><a href="{% url 'users:register' %}">User Registration</span></a>
+        <span><a href="">User Login</span></a>
+    </nav>
+
+
+{% endblock %}
