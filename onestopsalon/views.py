@@ -13,6 +13,15 @@ def salons(request):
 def home(request):
     return render(request, "onestopsalon/homepage.html")
 
+def contact(request):
+    if request.method == "POST":
+        return render(request, "onestopsalon/contact.html", {
+        'message': "Thank you for contacting us. We will get in touch with you shortly"
+        })
+    else :
+        return render(request, "onestopsalon/contact.html")
+    
+
 
 
 

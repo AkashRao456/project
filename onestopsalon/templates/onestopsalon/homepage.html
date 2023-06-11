@@ -12,20 +12,20 @@
                     OneStopSalon
                 </div>
                 <div class="menu">
-                    <a href="#">Home</a>
+                    <a href="{% url 'onestopsalon:home' %}">Home</a>
                     <a href="#">Services</a>
                     <a href="#">Feedback</a>
-                    <a href="#">Contact Us</a>
+                    <a href="{% url 'onestopsalon:contact' %}">Contact Us</a>
                 </div>
                 <div class="login">
-                    <a href="#">Login</a>
+                    <a href="{% url 'users:login' %}">Login</a>
                 </div>
             </nav>
             <section class="s-txt">
                 <h2>One Stop</h2>
                 <h2>For All.....</h2>
                 <h1>Your Salon Needs</h1>
-                <a href="#">Sign Up</a>
+                <a href="{% url 'users:register' %}">Sign Up</a>
             </section>
         </div>
     </body>
