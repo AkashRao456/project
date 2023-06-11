@@ -2,26 +2,61 @@
 
 {% block body %}
     {% if message %}
-        <div>{{ message }}</div>
+        <center><h2>{{ message }}<h2></center>
     {% endif %}
 
-    <header>
+    <div class="header">
         <h1>User Login Page</h1>
-    </header>
+    </div>
     <hr>
     <form action="login" method="post">
         {% csrf_token %}
+    <div class="container"> 
         <table>
             <tr>
-                <td><label for="">Username</label></td>
-                <td><input type="text" name="username"></td>
+                <td><label for="username" >Username</label></td>
+                <td><input id="username" placeholder="username" type="text" name="username"></td>
+                <td><span id="s1" style="color: red;"></span></td>
             </tr>
             <tr>
-                <td><label for="">Password</label></td>
-                <td><input type="password" name="password"></td>
+                <td><label for="password" >Password</label></td>
+                <td><input id="password" placeholder="password" type="password" name="password" ></td>
+                <td><span id="s2" style="color: red;"></span></td>
             </tr>
         </table>
-        <input type="submit" value="Login">
+    </div>
+        <div class="btn">
+        <input type="submit" value="Login" onclick="return validate()">
+        </div>
     </form>
+
+<script type="text/javascript">
+    function validate(){
+        var username, password, s1, s2, r;
+        username = document.getElementById("username");
+        password = document.getElementById("password");
+        s1 = document.getElementById("s1");
+        s2 = document.getElementById("s2");
+    if (username.value == ""){
+        s1.innerHTML = "*Mandatory";
+    }
+    else{
+        s1.innerHTML = "";
+    }
+    if (password.value == ""){
+        s2.innerHTML = "*Mandatory";
+    }
+    else{
+        s2.innerHTML = "";
+    }
+    if ((username.value == "") || (password.value == "")){
+        r = false;
+    }
+    else{
+        r = true;
+    }
+    return r;
+    }
+</script>
 
 {% endblock %}

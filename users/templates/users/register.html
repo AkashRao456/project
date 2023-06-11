@@ -1,3 +1,4 @@
+
 {% extends "users/layout.html" %}
 
 {% block body %}
@@ -7,33 +8,36 @@
 
     <form action="register" method="post">
         {% csrf_token %}
-        <header>
+        <div class="header">
             <h1>User Registration</h1>
-        </header>
+        </div>
         <hr>
+    <div class="container">
         <table>
             <tr>
-                <td><label>First name</label></td>
-                <td><input type="text" name="first_name"placeholder="K Akash"></td>
+                <td><label for="first_name">First name</label></td>
+                <td><input id="first_name" type="text" name="first_name"placeholder="K Akash" required></td>
             </tr>
             <tr>
-                <td><label>Last name</label></td>
-                <td><input type="text" name="last_name" placeholder="Rao"></td>
+                <td><label for="last_name">Last name</label></td>
+                <td><input id="last_name" type="text" name="last_name" placeholder="Rao" required></td>
             </tr>
             <tr>
-                <td><label for="">Email</label></td>
-                <td><input type="email"  name="email" placeholder="abc123@gmail.com"></td>
+                <td><label for="email">Email</label></td>
+                <td><input id="email" type="email"  name="email" placeholder="abc123@gmail.com" required></td>
             </tr>
             <tr>
-                <td><label for="">Username</label></td>
-                <td><input type="text" name="username" placeholder="akash123"></td>
+                <td><label for="username">Username</label></td>
+                <td><input id="username" type="text" name="username" placeholder="akash123" required></td>
             </tr>
             <tr>
-                <td><label for="">password</label></td>
-                <td><input type="password" name="password"></td>
+                <td><label for="password">password</label></td>
+                <td><input id="password" type="password" name="password" required></td>
             </tr>
         </table>
-        <input type="submit" value="Sign Up">
+    </div>
+        <div class="btn">
+        <input  type="submit" value="Sign Up">
+        </div>
     </form>
-
 {% endblock %}
