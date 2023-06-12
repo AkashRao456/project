@@ -1,42 +1,27 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'onestopsalon/styles2.css' %}">
     <title>Contact Page</title>
 </head>
 <body>
-    {% if message %}
-    <center><h3>{{ message }}</h3></center>
-    {% endif %}
-    <div class="header">
-        <h1>Contact Us:</h1>
-    </div>
+    <center>
+        <header>
+            <h1>Customer support</h1>
+        </header>
+        <hr>
+        <h3>Please email your concerns to us at</h3>
+        <h4><u>akashenrique456@gmail.com</h4></u>
+        <h3>Give us a call</h3>
+        <h4><u>9848214427</u></h4>
+    </center>
     <hr>
-    <form action="contact" method="post">
-        {% csrf_token %}
-    <div class="container"> 
-        <table>
-            <tr>
-                <td><label for="name">Enter your name :</label></td>
-                <td><input id="name" type="text" name="username" required></td>
-            </tr>
-            <tr>
-                <td><label for="email">Email address :</label></td>
-                <td><input id="email" type="email" name="email" required></td>
-            </tr>
-            <tr>
-                <td><label for="message">Please enter your message :</label></td>
-                <td><textarea></textarea></td>
-            </tr>
-        </table>
-    </div>
-        <div class="btn">
-        <input type="submit" value="submit">
-        </div>
-    </form>
+    <footer>
+            <center>&copy;2023 copyright all rights reserved</center>
+            <center>OneStopSalon</center>
+    </footer>
+    
 </body>
 </html>

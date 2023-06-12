@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'onestopsalon/styles2.css' %}">
+    <title>Feedback Page</title>
+</head>
+<body>
+    {% if message %}
+    <center><h3>{{ message }}</h3></center>
+    {% endif %}
+    <div class="header">
+        <h2>Your Feedback is very important to us</h1>
+    </div>
+    <hr>
+    <form action="feedback" method="post">
+        {% csrf_token %}
+    <div class="container"> 
+        <table>
+            <tr>
+                <td><label for="name">Enter your name :</label></td>
+                <td><input id="name" type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email address :</label></td>
+                <td><input id="email" type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="message">Please enter your message :</label></td>
+                <td><textarea name="message" required></textarea></td>
+            </tr>
+        </table>
+    </div>
+        <div class="btn">
+        <input type="submit" value="submit">
+        </div>
+    </form>
+    <hr>
+    <footer>
+            <center>&copy;2023 copyright all rights reserved</center>
+            <center>OneStopSalon</center>
+    </footer>
+</body>
+</html>

@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models.salon import Salon
+from django.conf import settings
 
 
 # Create your views here.
@@ -13,15 +14,17 @@ def salons(request):
 def home(request):
     return render(request, "onestopsalon/homepage.html")
 
-def contact(request):
+
+def feedback(request):
     if request.method == "POST":
-        return render(request, "onestopsalon/contact.html", {
-        'message': "Thank you for contacting us. We will get in touch with you shortly"
+        return render(request, "onestopsalon/feedback.html", {
+        'message': "Thank you for your feedback. We will try to work on that."
         })
     else :
-        return render(request, "onestopsalon/contact.html")
+        return render(request, "onestopsalon/feedback.html")
     
-
+def contact(request):
+    return render(request, "onestopsalon/contact.html")
 
 
 

@@ -15,10 +15,9 @@
             OneStopSalon
         </div>
         <div class="menu">
-            <a href="{% url 'onestopsalon:home' %}">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Feedback</a>
-            <a href="#">Contact Us</a>
+            <a href="{% url 'onestopsalon:salons' %}">Home</a>
+            <a href="{% url 'onestopsalon:feedback' %}">Feedback</a>
+            <a href="{% url 'onestopsalon:contact' %}">Contact Us</a>
             <a href="{% url 'onestopsalon:home' %}">Logout</a>
         </div>
     </nav>
@@ -30,9 +29,10 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">Salon name :{{salon.name}}</h5>
-              <p class="card-text">Address/Location :{{salon.address}}</p>
-              <p class="card-text"><small class="text-body-secondary">Contact Number :{{salon.phone}}</small></p>
+              <h5 class="card-title"><b>Salon name</b> :{{salon.name}}</h5>
+              <p class="card-text"><b>Address/Location</b> :{{salon.address}}</p>
+              <p class="card-text"><small class="text-body-secondary"><b>Contact Number</b> :{{salon.phone}}</small></p>
+              <p>Call us to make an appoinment</p>
             </div>
           </div>
         </div>
